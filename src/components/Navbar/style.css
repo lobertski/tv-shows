@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    height: 3rem;
+    width: auto;
+    background-color: #3D9289;
+    align-items: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+li {
+    float: left;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+
+li a:hover{
+    background-color: #454a4d; 
+}
+
+/* .secondary-navbar {
+    width: 80%;
+    background-color: #CECBC7;
+} */
+

@@ -1,0 +1,13 @@
+.container-header {
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    height: 5.5rem;
+    min-height: 5.5rem;
+    background-color: #2F3335;
+    align-items: center;
+}
+
+.img-logo {
+    width: 10rem;
+}
