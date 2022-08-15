@@ -1,4 +1,3 @@
-import { AppBar } from "@mui/material";
 import React, { useContext } from "react";
 import { Context } from "./NavbarProvider";
 import "./style.css";
