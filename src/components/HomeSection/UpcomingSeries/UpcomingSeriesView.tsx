@@ -8,15 +8,14 @@ import {
   Grid,
 } from "@mui/material";
 import React, { useContext } from "react";
-import { Context } from "./SectionHomeProvider";
+import { Context } from "./UpcomingSeriesProvider";
 import IShows from "./types";
 
-const SectionHomeView = () => {
+const UpcomingSeriesView = () => {
   const { shows = [] } = useContext(Context);
-  console.log(shows, "ASD");
   return (
     <section>
-      <h1>Popular shows airing tonight</h1>
+      <h1>Upcoming Season Premieres</h1>
       <Grid container spacing={2} direction="row" alignItems="flex-start">
         {shows.map((value: IShows) => (
           <Grid item xs={2}>
@@ -50,8 +49,11 @@ const SectionHomeView = () => {
           </Grid>
         ))}
       </Grid>
+      <div>
+        <Button variant="text">Countdown</Button>
+      </div>
     </section>
   );
 };
 
-export default SectionHomeView;
+export default UpcomingSeriesView;

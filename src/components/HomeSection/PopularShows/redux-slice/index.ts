@@ -1,12 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { getShows } from "../../../api/getShowsRequest";
+import { getShows } from "../../../../api/getShowsRequest";
 
 
 const initialState = {shows : []}
 
 export const fetchShows = createAsyncThunk('shows/getShows', async () => {
-    const payload = await getShows('shows')
-    console.log(payload.data,'sdfsdf')
+    const date = new Date()
+    const current_date = {
+        month : ( "0" + date.getMonth().toString() ).slice(-2),
+        day : ( "0" + date.getDate().toString() ).slice(-2),
+        year : date.getFullYear
+    }
+    const payload = await getShows(`schedule?country=US&date=${current_date.year}-${current_date.month}-${current_date.day}`)
     return payload?.data ?? []
 })
 const sectionHomeSlice = createSlice({

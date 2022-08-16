@@ -1,14 +1,14 @@
 import React from "react";
 import HeaderIndex from "../../components/Header";
 import NavbarIndex from "../../components/Navbar";
-import SectionHomeIndex from "../../components/SectionHome";
+import HomeSection from "../../components/HomeSection";
 
 const Home = () => {
   return (
     <div>
       <HeaderIndex />
       <NavbarIndex />
-      <SectionHomeIndex />
+      <HomeSection />
     </div>
   );
 };
