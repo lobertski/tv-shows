@@ -59,7 +59,7 @@ const HomeAsideView = () => {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {show.show?.name ?? ""}
+                  {show.show?.name ?? "Name"}
                 </TableCell>
                 <TableCell align="right">{123}</TableCell>
                 <TableCell align="right">{231}</TableCell>
