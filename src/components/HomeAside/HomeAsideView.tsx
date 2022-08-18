@@ -12,29 +12,14 @@ import { IShow } from "./types";
 
 const HomeAsideView = () => {
   const { shows = [] } = useContext(Context);
-  function createData(
-    name: string,
-    calories: number,
-    fat: number,
-    carbs: number,
-    protein: number
-  ) {
-    return { name, calories, fat, carbs, protein };
-  }
-
-  const rows = [
-    createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-    createData("Ice cream sandwich", 237, 9.0, 37, 4.3),
-    createData("Eclair", 262, 16.0, 24, 6.0),
-    createData("Cupcake", 305, 3.7, 67, 4.3),
-    createData("Gingerbread", 356, 16.0, 49, 3.9),
-  ];
+  const current_date = new Date();
+  const month = current_date.toLocaleString("default", { month: "long" });
   return (
     <aside>
-      <h1>Schedule for Aug 16</h1>
+      <h1>Schedule for {`${month} ${current_date.getDate()}`}</h1>
       <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
-          <TableHead>
+        <Table sx={{ minWidth: 500 }} size="small" aria-label="a dense table">
+          {/* <TableHead>
             <TableRow>
               <TableCell align="center">20:00</TableCell>
             </TableRow>
@@ -48,7 +33,7 @@ const HomeAsideView = () => {
             <TableRow>
               <TableCell align="center">23:00</TableCell>
             </TableRow>
-          </TableHead>
+          </TableHead> */}
           <TableBody>
             <TableRow>
               <TableCell align="center">20:00</TableCell>
@@ -59,10 +44,50 @@ const HomeAsideView = () => {
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
                 <TableCell component="th" scope="row">
-                  {show.show?.name ?? "Named"}
+                  {show.show?.name ?? ""}
                 </TableCell>
-                <TableCell align="right">{123}</TableCell>
-                <TableCell align="right">{231}</TableCell>
+              </TableRow>
+            ))}
+
+            <TableRow>
+              <TableCell align="center">21:00</TableCell>
+            </TableRow>
+            {shows[21].map((show: IShow) => (
+              <TableRow
+                key={show.show?.name}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {show.show?.name ?? ""}
+                </TableCell>
+              </TableRow>
+            ))}
+
+            <TableRow>
+              <TableCell align="center">22:00</TableCell>
+            </TableRow>
+            {shows[22].map((show: IShow) => (
+              <TableRow
+                key={show.show?.name}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {show.show?.name ?? ""}
+                </TableCell>
+              </TableRow>
+            ))}
+
+            <TableRow>
+              <TableCell align="center">23:00</TableCell>
+            </TableRow>
+            {shows[23].map((show: IShow) => (
+              <TableRow
+                key={show.show?.name}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell component="th" scope="row">
+                  {show.show?.name ?? ""}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
