@@ -16,26 +16,26 @@ const UpcomingSeriesView = () => {
   return (
     <section>
       <h1>Upcoming Season Premieres</h1>
-      <Grid container spacing={2} direction="row" alignItems="flex-start">
+      <Grid container spacing={1} direction="row" alignItems="flex-start">
         {shows.map((value: IShows) => (
-          <Grid item xs={2}>
+          <Grid item xs={1.4}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
                 height="255"
                 width="200"
-                image={value.image.medium}
+                image={value.show?.image?.medium ?? ""}
                 alt="picture"
               />
               <CardContent style={{ backgroundColor: "#1F4B47" }}>
                 <Typography
                   gutterBottom
-                  variant="h6"
+                  // variant="h6"
                   component="div"
                   align="center"
                   style={{ color: "white" }}
                 >
-                  {value.name}
+                  {value?.show?.name ?? ""}
                 </Typography>
                 {/* <Typography variant="body2" color="text.secondary">
                   {value.summary}

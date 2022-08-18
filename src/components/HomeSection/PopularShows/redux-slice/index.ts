@@ -5,14 +5,13 @@ import { getShows } from "../../../../api/getShowsRequest";
 const initialState = {shows : []}
 
 export const fetchShows = createAsyncThunk('shows/getShows', async () => {
-    const date = new Date()
-    const current_date = {
-        month : ( "0" + date.getMonth().toString() ).slice(-2),
-        day : ( "0" + date.getDate().toString() ).slice(-2),
-        year : date.getFullYear
+    try {
+        const payload = await getShows('shows')
+        return payload?.data ?? []
     }
-    const payload = await getShows(`schedule?country=US&date=${current_date.year}-${current_date.month}-${current_date.day}`)
-    return payload?.data ?? []
+    catch (error) {
+        return error
+    }
 })
 const sectionHomeSlice = createSlice({
     name: 'shows',

@@ -2,23 +2,34 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { getShows } from "../../../../api/getShowsRequest";
 
 
-const initialState = {shows : []}
+const initialState = {upcoming_shows : []}
 
-export const fetchShows = createAsyncThunk('shows/getShows', async () => {
-    const payload = await getShows('shows')
-    console.log(payload.data,'sdfsdf')
-    return payload?.data ?? []
+export const fetchUpcomingShows = createAsyncThunk('upcoming_shows/getUpcomingShows', async () => {
+    try {
+        const date = new Date()
+        const current_date = {
+            month : ( "0" + (date.getMonth() + 1).toString() ).slice(-2) ,
+            day : parseFloat(( "0" + date.getDate().toString() ).slice(-2)) ,
+            year : date.getFullYear()
+        }
+        const payload = await getShows(`schedule?country=US&date=${current_date.year}-${current_date.month}-${current_date.day}`)
+        return payload?.data ?? []
+    }
+    catch (error) {
+        return error
+    }
+
 })
-const sectionHomeSlice = createSlice({
-    name: 'shows',
+const upcomingShowsSlice = createSlice({
+    name: 'upcoming_shows',
     initialState,
     reducers : {},
     extraReducers(builder) {
-        builder.addCase(fetchShows.pending, (state : any, action :any) => {state.shows = action.payload})
-        builder.addCase(fetchShows.fulfilled, (state : any, action :any) => {state.shows = action.payload})
+        builder.addCase(fetchUpcomingShows.pending, (state : any, action :any) => {state.upcoming_shows = action.payload})
+        builder.addCase(fetchUpcomingShows.fulfilled, (state : any, action :any) => {state.upcoming_shows = action.payload})
     },
 })
 
 
 
-export const sectionHomeReducer = sectionHomeSlice.reducer
+export const upcomingShowsReducer = upcomingShowsSlice.reducer

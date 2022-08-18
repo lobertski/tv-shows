@@ -6,13 +6,14 @@ export const Context = createContext<any>({});
 const PopularShowsProvider: React.FC<any> = ({ children }) => {
   const [shows, setShows] = useState<Array<{}>>([]);
   const dispatch = useDispatch<any>();
-  const payload = useSelector((state: any) => state.sectionHomeReducer);
+  const payload = useSelector((state: any) => state.popular_shows);
 
   useEffect(() => {
     dispatch(fetchShows());
   }, []);
 
   useEffect(() => {
+    console.log(payload.shows, "popular_shows");
     setShows(payload?.shows?.slice(0, 5) ?? []);
     return;
   }, [payload]);

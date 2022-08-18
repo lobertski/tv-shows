@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { sectionHomeReducer } from "../components/HomeSection/PopularShows/redux-slice";
+import { upcomingShowsReducer } from "../components/HomeSection/UpcomingSeries/redux-slice";
 
-const root_reducer = combineReducers({sectionHomeReducer})
-export const store = configureStore({reducer : root_reducer })
+export const store = configureStore({reducer : {popular_shows : sectionHomeReducer, upcoming_shows : upcomingShowsReducer} })
 export type AppDispatch = typeof store.dispatch
