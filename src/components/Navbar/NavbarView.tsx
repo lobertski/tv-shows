@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Context } from "./NavbarProvider";
 import "./style.css";
 
@@ -9,7 +10,8 @@ const NavbarView = () => {
       <nav className="navbar">
         <ul>
           <li>
-            <a href="#home">Shows</a>
+            <Link to="/shows">Shows</Link>
+            {/* <a href="#home">Shows</a> */}
           </li>
           <li>
             <a href="#news">People</a>
