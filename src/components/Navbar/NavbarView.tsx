@@ -11,10 +11,9 @@ const NavbarView = () => {
         <ul>
           <li>
             <Link to="/shows">Shows</Link>
-            {/* <a href="#home">Shows</a> */}
           </li>
           <li>
-            <a href="#news">People</a>
+            <Link to="/people">People</Link>
           </li>
           <li>
             <a href="#contact">Networks</a>

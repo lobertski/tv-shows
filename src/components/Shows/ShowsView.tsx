@@ -6,7 +6,7 @@ import { Context } from "./ShowsProvider";
 const ShowsView: React.FC = () => {
   const { shows = [] } = useContext(Context);
   const ShowsHOC = withFetchAPI(DisplayFetchView, shows);
-  return ShowsHOC
+  return ShowsHOC;
 };
 
 export default ShowsView;
