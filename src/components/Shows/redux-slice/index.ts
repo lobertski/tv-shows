@@ -5,9 +5,9 @@ import { getShows } from "../../../api/getShowsRequest";
 
 const initialState = {shows : []}
 
-export const fetchShows = createAsyncThunk('shows/getShows', async () => {
+export const fetchShows = createAsyncThunk('shows/getShows', async (data? : string) => {
     try {
-        const payload = await getShows('shows')
+        const payload = await getShows(data ?? 'shows')
         return payload?.data ?? []
     }
     catch (error) {

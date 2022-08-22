@@ -4,11 +4,11 @@ import NavbarView from "./NavbarView";
 
 const NavbarIndex = (props: any) => {
   return (
-    <div>
+    <>
       <NavbarProvider {...props}>
         <NavbarView {...props} />
       </NavbarProvider>
-    </div>
+    </>
   );
 };
 

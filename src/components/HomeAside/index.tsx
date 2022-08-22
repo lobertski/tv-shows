@@ -4,11 +4,11 @@ import HomeAsideView from "./HomeAsideView";
 
 const HomeAsideIndex = (props: any) => {
   return (
-    <div>
+    <>
       <HomeAsideProvider {...props}>
         <HomeAsideView {...props} />
       </HomeAsideProvider>
-    </div>
+    </>
   );
 };
 

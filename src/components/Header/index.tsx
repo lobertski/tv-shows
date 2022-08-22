@@ -4,11 +4,11 @@ import ListView from "./HeaderView";
 
 const HeaderIndex = (props: any) => {
   return (
-    <div>
+    <>
       <ListProvider {...props}>
         <ListView {...props} />
       </ListProvider>
-    </div>
+    </>
   );
 };
 

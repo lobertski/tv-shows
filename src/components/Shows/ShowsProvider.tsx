@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchShows } from "./redux-slice";
 
 export const Context = createContext<any>({});
-const PopularShowsProvider: React.FC<any> = ({ children }) => {
+const ShowsProvider: React.FC<any> = ({ children }) => {
   const [shows, setShows] = useState<Array<{}>>([]);
   const dispatch = useDispatch<any>();
   const payload = useSelector((state: any) => state.popular_shows);
@@ -13,11 +13,10 @@ const PopularShowsProvider: React.FC<any> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(payload.shows, "popular_shows");
-    setShows(payload?.shows?.slice(0, 5) ?? []);
+    setShows(payload?.shows ?? []);
     return;
   }, [payload]);
   return <Context.Provider value={{ shows }}>{children}</Context.Provider>;
 };
 
-export default PopularShowsProvider;
+export default ShowsProvider;

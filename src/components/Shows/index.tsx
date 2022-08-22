@@ -1,15 +1,15 @@
 import React from "react";
-import PopularShowsProvider from "./PopularShowsProvider";
-import PopularShowsView from "./PopularShowsView";
+import ShowsProvider from "./ShowsProvider";
+import ShowsView from "./ShowsView";
 
-const SectionHomeIndex = (props: any) => {
+const ShowsIndex = (props: any) => {
   return (
-    <div>
-      <PopularShowsProvider {...props}>
-        <PopularShowsView {...props} />
-      </PopularShowsProvider>
-    </div>
+    <>
+      <ShowsProvider {...props}>
+        <ShowsView {...props} />
+      </ShowsProvider>
+    </>
   );
 };
 
-export default SectionHomeIndex;
+export default ShowsIndex;

@@ -4,10 +4,10 @@ import UpcomingSeries from "./UpcomingSeries";
 
 const HomeSection = () => {
   return (
-    <div>
+    <>
       <SectionHomeIndex />
       <UpcomingSeries />
-    </div>
+    </>
   );
 };
 
