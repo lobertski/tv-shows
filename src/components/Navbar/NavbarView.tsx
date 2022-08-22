@@ -4,7 +4,7 @@ import { Context } from "./NavbarProvider";
 import "./style.css";
 
 const NavbarView = () => {
-  const { onClick = () => {} } = useContext(Context);
+  // const { onClick = () => {} } = useContext(Context);
   return (
     <>
       <nav className="navbar">
