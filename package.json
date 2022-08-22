@@ -2,7 +2,7 @@
   "name": "todo_redux",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://lobertski.github.io/tv-shows/",
+  "homepage": "https://lobertski.github.io/tv-shows",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
