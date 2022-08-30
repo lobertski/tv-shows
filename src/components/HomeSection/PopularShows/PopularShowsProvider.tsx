@@ -13,7 +13,6 @@ const PopularShowsProvider: React.FC<any> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(payload.shows, "popular_shows");
     setShows(payload?.shows?.slice(0, 5) ?? []);
     return;
   }, [payload]);

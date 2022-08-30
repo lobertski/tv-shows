@@ -4,7 +4,7 @@ import NavbarIndex from "../../components/Navbar";
 import HomeSection from "../../components/HomeSection";
 import HomeAsideIndex from "../../components/HomeAside";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div>
       <HeaderIndex />

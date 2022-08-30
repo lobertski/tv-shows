@@ -1,16 +1,16 @@
 import React from "react";
+import DescriptionIndex from "../../components/Description";
 import HeaderIndex from "../../components/Header";
 import NavbarIndex from "../../components/Navbar";
-import PeopleIndex from "../../components/People";
 
-const People: React.FC = () => {
+const ShowResult: React.FC<any> = () => {
   return (
     <>
       <HeaderIndex />
       <NavbarIndex />
-      <PeopleIndex />
+      <DescriptionIndex />
     </>
   );
 };
 
-export default People;
+export default ShowResult;

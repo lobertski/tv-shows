@@ -10,11 +10,14 @@ import {
   Stack,
 } from "@mui/material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import IShows from "../Shows/types";
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 const DisplayFetchView: React.FC<any> = ({ data = [] }) => {
   const [pagination_value, setPagination] = useState({ start: 0, end: 25 });
+  const navigate = useNavigate();
   const handlePagination = (index: number) => {
     return setPagination((prev) => ({
       start: (index - 1) * 25,
@@ -36,6 +39,9 @@ const DisplayFetchView: React.FC<any> = ({ data = [] }) => {
                   width="160"
                   image={value?.image?.medium ?? ""}
                   alt="picture"
+                  onClick={() =>
+                    navigate("result", { state: { id: value.id } })
+                  }
                 />
                 <CardContent style={{ backgroundColor: "#1F4B47" }}>
                   <Typography

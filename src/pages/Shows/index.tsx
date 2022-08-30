@@ -3,7 +3,7 @@ import HeaderIndex from "../../components/Header";
 import NavbarIndex from "../../components/Navbar";
 import ShowsIndex from "../../components/Shows";
 
-const Shows = () => {
+const Shows: React.FC = () => {
   return (
     <>
       <HeaderIndex />

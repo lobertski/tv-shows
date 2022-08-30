@@ -7,7 +7,6 @@ const initialState = {shows : []}
 
 export const fetchShows = createAsyncThunk<any,any>('shows/getShows', async (data? : string) => {
     try {
-        console.log(data,'SASASAS')
         const payload = await getShows(data ?? 'shows')
         return payload?.data ?? []
     }
