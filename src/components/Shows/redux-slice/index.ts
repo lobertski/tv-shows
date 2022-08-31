@@ -19,8 +19,8 @@ const sectionHomeSlice = createSlice({
     initialState,
     reducers : {},
     extraReducers(builder) {
-        builder.addCase(fetchShows.pending, (state : any, action :any) => {state.shows = action.payload})
-        builder.addCase(fetchShows.fulfilled, (state : any, action :any) => {state.shows = action.payload})
+        builder.addCase(fetchShows.pending, (state : typeof initialState, action :Record<string, any>) => {state.shows = action.payload})
+        builder.addCase(fetchShows.fulfilled, (state : typeof initialState, action :Record<string, any>) => {state.shows = action.payload})
     },
 })
 
