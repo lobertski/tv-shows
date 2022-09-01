@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { createContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUpcomingShows } from "./redux-slice";
@@ -12,7 +13,6 @@ const UpcomingSeriesProvider: React.FC<any> = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log(payload?.upcoming_shows, "upcoming_shows");
     setShows(payload?.upcoming_shows?.slice(0, 5) ?? []);
     return;
   }, [payload]);
