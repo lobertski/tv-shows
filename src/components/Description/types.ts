@@ -6,6 +6,8 @@ export default interface IShow  {
     premiered : string,
     ended : string
     image : {medium : string},
-    summary : string
-
+    summary : string,
+    webChannel : string,
+    network : {name : string, officialSite : string},
+    schedule : {time : string, days: string[]}
 }

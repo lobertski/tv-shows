@@ -1,0 +1,22 @@
+.section-container {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center; 
+    flex-wrap: wrap;
+    row-gap: 4em;
+    padding: 3em 5em;
+}
+
+.figure-container{
+    margin-left: -0.3em;
+}
+
+.summary-show {
+    width: 700px;
+    top: -15px;
+    left: 230px;
+    align-self: center;
+    justify-self: stretch;
+    margin-left: -1em;
+    margin-right: 2em;
+}

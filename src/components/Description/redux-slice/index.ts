@@ -4,7 +4,7 @@ import { getShows } from "../../../api/getShowsRequest";
 const initialState = {show : {}}
 export const fetchShowById = createAsyncThunk('shows/getShowByID', async(id : number) => {
     try {
-        const payload = await getShows(`shows/${id}`)
+        const payload = await getShows(`shows/${id}?embed=cast`)
         return payload.data ?? []
     } catch (error) {
         return error
