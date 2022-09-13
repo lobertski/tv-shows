@@ -5,7 +5,7 @@ import { Context } from "./PeopleProvider";
 
 const PeopleView: React.FC = () => {
   const { people = [] } = useContext(Context);
-  const PeopleHOC = withFetchAPI(DisplayFetchView, people);
+  const PeopleHOC = withFetchAPI(DisplayFetchView, people, "People");
   return PeopleHOC;
 };
 

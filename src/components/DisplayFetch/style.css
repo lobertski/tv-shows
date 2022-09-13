@@ -1,10 +1,14 @@
-.cards{
+.section-container{
     display: flex;
     align-items: center;
+    justify-content: center;
+    row-gap: 1em;
     flex-wrap: wrap;
-    margin : auto;
 }
 
+.section-title {
+   margin-right: auto;
+}
 .pagination {
     display: flex;
     align-items: center;

@@ -4,29 +4,27 @@ import {
   CardContent,
   Typography,
   CardActions,
-  Button,
   Grid,
   Pagination,
   Stack,
 } from "@mui/material";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import IShows from "../Shows/types";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
 
-const DisplayFetchView: React.FC<any> = ({ data = [] }) => {
+const DisplayFetchView: React.FC<any> = ({ data = [], title = "" }) => {
   const [pagination_value, setPagination] = useState({ start: 0, end: 25 });
   const navigate = useNavigate();
   const handlePagination = (index: number) => {
-    return setPagination((prev) => ({
+    return setPagination({
       start: (index - 1) * 25,
       end: 25 * index,
-    }));
+    });
   };
   return (
-    <section>
-      <h1>Shows</h1>
+    <section className="section-container">
+      <h1 className="section-title">{title}</h1>
       <Grid container spacing={0} direction="row" alignItems="flex-start">
         {data
           .slice(pagination_value.start, pagination_value.end)
@@ -57,10 +55,7 @@ const DisplayFetchView: React.FC<any> = ({ data = [] }) => {
                   {value.summary}
                 </Typography> */}
                 </CardContent>
-                <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
-                </CardActions>
+                <CardActions></CardActions>
               </Card>
             </Grid>
           ))}

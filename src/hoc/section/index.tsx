@@ -1,7 +1,11 @@
 import React from "react";
 
-const withFetchAPI: React.FC<any> = (WrappedComponents: any, data: any) => {
-  return <WrappedComponents data={data} />;
+const withFetchAPI = (
+  WrappedComponents: React.FC<any>,
+  data: any[],
+  title?: string
+) => {
+  return <WrappedComponents data={data} title={title} />;
 };
 
 export default withFetchAPI;
