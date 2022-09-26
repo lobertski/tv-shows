@@ -4,7 +4,7 @@
     height: 3rem;
     width: auto;
     background-color: #3D9289;
-    align-items: center;
+    align-items: center;   
 }
 
 ul {
@@ -15,7 +15,6 @@ ul {
 
 li {
     float: left;
-
 }
 
 li a {
@@ -25,6 +24,7 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 0.9em;
+    
   }
 
 li a:hover{

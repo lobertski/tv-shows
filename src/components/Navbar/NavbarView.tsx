@@ -1,10 +1,7 @@
-import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "./NavbarProvider";
 import "./style.css";
 
 const NavbarView = () => {
-  // const { onClick = () => {} } = useContext(Context);
   return (
     <>
       <nav className="navbar">
@@ -38,9 +35,6 @@ const NavbarView = () => {
           </li>
         </ul>
       </nav>
-      {/* <nav className="secondary-navbar">
-        <h1>TRE</h1>
-      </nav> */}
     </>
   );
 };
